@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 1 Month Anniversary, My Love! 💖</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Floating Particles Canvas -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Sticky Glass Navigation -->
+  <header class="top-nav">
+    <a href="#hero" class="brand-badge">
+      <span class="heart-pulse">💖</span>
+      <span id="nav-couple-names">Us • 1 Month</span>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="#hero">✨ Journey</a></li>
+      <li><a href="#letter-sec">💌 Love Letter</a></li>
+      <li><a href="#jar-sec">💫 Reason Jar</a></li>
+      <li><a href="#open-when-sec">📬 Open When</a></li>
+      <li><a href="#memories-sec">📸 Memories</a></li>
+      <li><a href="#coupons-sec">🎟️ Coupons</a></li>
+      <li><a href="#game-sec">🎮 Mini Game</a></li>
+    </ul>
+
+    <div class="nav-actions">
+      <!-- Ambient Music Toggle -->
+      <button class="btn-icon" id="musicToggleBtn" title="Toggle Lo-fi Ambient Music" aria-label="Toggle Music">
+        🎵
+      </button>
+
+      <!-- Personalize / Edit Settings -->
+      <button class="btn-icon" id="customizeOpenBtn" title="Customize Names & Date" aria-label="Settings">
+        ⚙️
+      </button>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       HERO SECTION
+       ========================================================================== -->
+  <section id="hero" class="hero-section container">
+    <div class="anniversary-pill">
+      <span>✨</span>
+      <span>Official 1 Month Milestone Reached</span>
+      <span>✨</span>
+    </div>
+
+    <h1 class="hero-title">
+      Happy 1 Month, <br>
+      <span class="gradient-text" id="hero-her-name">My Beautiful Girlfriend</span>! 💖
+    </h1>
+
+    <p class="hero-subtitle" id="hero-subtitle">
+      30 days of falling deeper in love with you every single sunrise. You are my favorite thought, my happiest place, and my sweetest adventure.
+    </p>
+
+    <!-- Real-Time Counter -->
+    <div class="counter-wrapper">
+      <div class="counter-label">Time Spent In Love With You</div>
+      <div class="counter-grid">
+        <div class="counter-item">
+          <span class="counter-num" id="cnt-days">30</span>
+          <span class="counter-unit">Days</span>
+        </div>
+        <span class="counter-sep">:</span>
+        <div class="counter-item">
+          <span class="counter-num" id="cnt-hours">00</span>
+          <span class="counter-unit">Hours</span>
+        </div>
+        <span class="counter-sep">:</span>
+        <div class="counter-item">
+          <span class="counter-num" id="cnt-minutes">00</span>
+          <span class="counter-unit">Minutes</span>
+        </div>
+        <span class="counter-sep">:</span>
+        <div class="counter-item">
+          <span class="counter-num" id="cnt-seconds">00</span>
+          <span class="counter-unit">Seconds</span>
+        </div>
+      </div>
+      <div class="counter-footer-tag">
+        <span>🌙</span>
+        <span>Every second with you feels like magic</span>
+        <span>🌸</span>
+      </div>
+    </div>
+
+    <!-- CTA Buttons -->
+    <div class="hero-cta-group">
+      <button class="btn-primary" id="openLetterHeroBtn">
+        <span>💌 Open Your Letter</span>
+      </button>
+      <button class="btn-hug" id="sendHugBtn">
+        <span>🫂 Send Virtual Hug</span>
+      </button>
+      <a href="#jar-sec" class="btn-secondary">
+        <span>✨ Spin Love Jar</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       INTERACTIVE LOVE LETTER & 3D ENVELOPE
+       ========================================================================== -->
+  <section id="letter-sec" class="letter-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">To The Girl Who Holds My Heart</span>
+        <h2 class="section-title">A Letter For You, <span class="gradient-text-alt" id="letter-recipient-name">My Love</span></h2>
+        <p class="section-desc">Tap the wax seal to break the stamp and unfold my heart on paper.</p>
+      </div>
+
+      <div class="envelope-stage">
+        <div class="envelope-wrapper" id="envelopeWrapper">
+          <div class="envelope" id="envelope">
+            <div class="envelope-flap"></div>
+            <div class="wax-seal" id="waxSeal" title="Click to break seal and read">
+              <span>❤️</span>
+            </div>
+            <div class="envelope-prompt">
+              <span>✉️</span> Click seal to open
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Unfolded Paper Letter -->
+      <div class="letter-paper" id="letterPaper">
+        <div class="letter-header">
+          <div>
+            <div class="letter-date" id="letterDateDisplay">1 Month Anniversary • Today & Always</div>
+            <div style="font-size: 0.82rem; color: var(--pink-light); margin-top: 4px;">To: <span id="letter-to-name">My Sweetest Girl</span></div>
+          </div>
+          <div class="letter-stamp">
+            <span>LOVE</span>
+            <span>★ 1M ★</span>
+            <span>POST</span>
+          </div>
+        </div>
+
+        <div class="letter-body" id="letterBodyContent">
+          Can you believe it's already been a full month? It feels like just yesterday we started this journey, yet somehow I can't imagine my world without you in it anymore.
+
+          Thank you for every smile you've given me, every late-night conversation, every sweet look, and the warmth you bring into my life every day. You make everything brighter, softer, and so much more meaningful.
+
+          This is only month one of a million beautiful chapters waiting for us. Happy 1 Month Anniversary, baby. I love you more than words can say.
+        </div>
+
+        <div class="letter-signature">
+          <div style="font-size: 0.9rem; color: var(--text-muted);">Forever yours,</div>
+          <div class="sig-name" id="letter-from-name">Your Boyfriend ❤️</div>
+        </div>
+
+        <div class="letter-actions">
+          <button class="btn-pill-sm" id="editLetterQuickBtn">
+            ✏️ Edit Letter
+          </button>
+          <button class="btn-pill-sm" id="replayEnvelopeBtn">
+            🔄 Fold Back Up
+          </button>
+          <button class="btn-pill-sm" id="copyLetterBtn">
+            📋 Copy Message
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       30 REASONS WHY I LOVE YOU (INTERACTIVE JAR)
+       ========================================================================== -->
+  <section id="jar-sec" class="jar-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Daily Little Reminders</span>
+        <h2 class="section-title">30 Reasons Why <span class="gradient-text">I Adore You</span></h2>
+        <p class="section-desc">One for every single day of our first month together. Tap the glowing jar to pull out a sweet reason!</p>
+      </div>
+
+      <div class="jar-interactive-container">
+        <!-- Jar visual side -->
+        <div class="jar-display-side">
+          <div class="love-jar" id="loveJar" title="Click jar to pull out a capsule!">
+            <div class="jar-lid"></div>
+            <div class="jar-tag">Reasons Jar 💖</div>
+            <div class="jar-hearts-pile">
+              <span>💖</span><span>🌸</span><span>✨</span>
+              <span>💜</span><span>🫐</span><span>🍬</span>
+              <span>💎</span><span>🎀</span><span>🌷</span>
+            </div>
+          </div>
+          <div class="jar-hint">
+            <span>👆 Tap the jar to pull a capsule!</span>
+          </div>
+        </div>
+
+        <!-- Capsule reveal side -->
+        <div class="capsule-reveal-side">
+          <div class="glass-panel capsule-card" id="capsuleCard">
+            <span class="capsule-number" id="capsuleNum">Reason #1 of 30</span>
+            <div class="capsule-icon" id="capsuleEmoji">💖</div>
+            <p class="capsule-text" id="capsuleText">
+              "The adorable way your eyes sparkle whenever you talk about something you truly love."
+            </p>
+          </div>
+
+          <div class="jar-stats">
+            <span style="font-weight: 600; color: var(--pink-light);" id="unlockedCountText">Discovered: 1 / 30</span>
+            <div class="progress-bar-wrapper">
+              <div class="progress-bar-fill" id="jarProgressBar" style="width: 3.3%;"></div>
+            </div>
+            <button class="btn-pill-sm" id="viewAllReasonsBtn">
+              📖 Read All
+            </button>
+          </div>
+
+          <div style="display: flex; gap: 12px; justify-content: center;">
+            <button class="btn-primary" id="pullCapsuleBtn" style="padding: 12px 24px; font-size: 0.95rem;">
+              🎲 Draw Another Reason
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       OPEN WHEN... ENVELOPES
+       ========================================================================== -->
+  <section id="open-when-sec" class="open-when-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Emergency Love Kit</span>
+        <h2 class="section-title">Open When... <span class="gradient-text-alt">Letters</span></h2>
+        <p class="section-desc">Keep these close whenever you need a reminder of how cherished you are.</p>
+      </div>
+
+      <div class="open-when-grid">
+        <!-- Card 1 -->
+        <div class="open-card" data-key="miss">
+          <div class="open-card-top">
+            <span class="open-icon">🥺</span>
+            <span class="open-badge">Pocket Hug</span>
+          </div>
+          <div>
+            <h3 class="open-title">Open when you miss me</h3>
+            <p class="open-subtitle">When the distance feels a little too far...</p>
+          </div>
+          <div class="open-cta">Read Letter →</div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="open-card" data-key="tired">
+          <div class="open-card-top">
+            <span class="open-icon">🫂</span>
+            <span class="open-badge">Warm Comfort</span>
+          </div>
+          <div>
+            <h3 class="open-title">Open when you had a long day</h3>
+            <p class="open-subtitle">When you're exhausted and need softness...</p>
+          </div>
+          <div class="open-cta">Read Letter →</div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="open-card" data-key="sleep">
+          <div class="open-card-top">
+            <span class="open-icon">🌙</span>
+            <span class="open-badge">Sweet Dreams</span>
+          </div>
+          <div>
+            <h3 class="open-title">Open when you can't sleep</h3>
+            <p class="open-subtitle">When your thoughts are spinning late at night...</p>
+          </div>
+          <div class="open-cta">Read Letter →</div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="open-card" data-key="doubt">
+          <div class="open-card-top">
+            <span class="open-icon">👑</span>
+            <span class="open-badge">You're Amazing</span>
+          </div>
+          <div>
+            <h3 class="open-title">Open when you doubt yourself</h3>
+            <p class="open-subtitle">When you forget how extraordinary you are...</p>
+          </div>
+          <div class="open-cta">Read Letter →</div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="open-card" data-key="laugh">
+          <div class="open-card-top">
+            <span class="open-icon">🤪</span>
+            <span class="open-badge">Silly Vibes</span>
+          </div>
+          <div>
+            <h3 class="open-title">Open when you need to giggle</h3>
+            <p class="open-subtitle">A quick injection of goofy happiness...</p>
+          </div>
+          <div class="open-cta">Read Letter →</div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="open-card" data-key="kiss">
+          <div class="open-card-top">
+            <span class="open-icon">💋</span>
+            <span class="open-badge">Sweet Kiss</span>
+          </div>
+          <div>
+            <h3 class="open-title">Open when you want a kiss</h3>
+            <p class="open-subtitle">Sending you the warmest kiss right now...</p>
+          </div>
+          <div class="open-cta">Read Letter →</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       POLAROID MEMORY WALL & TIMELINE
+       ========================================================================== -->
+  <section id="memories-sec" class="memories-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Our First 30 Days</span>
+        <h2 class="section-title">Polaroid <span class="gradient-text">Memory Wall</span></h2>
+        <p class="section-desc">Little moments that meant the world to me. (You can click any photo to upload your real couple photos!)</p>
+      </div>
+
+      <div class="polaroid-grid" id="polaroidGrid">
+        <!-- Photo 1 -->
+        <div class="polaroid-card" data-index="0">
+          <div class="washi-tape"></div>
+          <div class="polaroid-img-wrapper">
+            <div class="polaroid-fallback-art" id="photo-art-0">
+              <span class="icon">💫</span>
+              <strong>Day 1 Magic</strong>
+              <p style="font-size:0.75rem; color:var(--text-dim); margin-top:4px;">Where our story began</p>
+            </div>
+            <img class="polaroid-img" id="photo-img-0" style="display:none;" alt="Memory 1">
+            <label class="upload-overlay-btn" title="Upload actual photo">
+              📷 Upload Photo
+              <input type="file" accept="image/*" class="photo-input" data-index="0" style="display:none;">
+            </label>
+          </div>
+          <div class="polaroid-caption">Where our story officially began ✨</div>
+          <div class="polaroid-date">Month 1 • The Spark</div>
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="polaroid-card" data-index="1">
+          <div class="washi-tape"></div>
+          <div class="polaroid-img-wrapper">
+            <div class="polaroid-fallback-art" id="photo-art-1">
+              <span class="icon">🌙</span>
+              <strong>Late Night Talks</strong>
+              <p style="font-size:0.75rem; color:var(--text-dim); margin-top:4px;">Losing track of time</p>
+            </div>
+            <img class="polaroid-img" id="photo-img-1" style="display:none;" alt="Memory 2">
+            <label class="upload-overlay-btn" title="Upload actual photo">
+              📷 Upload Photo
+              <input type="file" accept="image/*" class="photo-input" data-index="1" style="display:none;">
+            </label>
+          </div>
+          <div class="polaroid-caption">Endless 3 AM laughs and giggles 🌸</div>
+          <div class="polaroid-date">Month 1 • Soft Whispers</div>
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="polaroid-card" data-index="2">
+          <div class="washi-tape"></div>
+          <div class="polaroid-img-wrapper">
+            <div class="polaroid-fallback-art" id="photo-art-2">
+              <span class="icon">🥰</span>
+              <strong>That Smile</strong>
+              <p style="font-size:0.75rem; color:var(--text-dim); margin-top:4px;">Living rent-free in my heart</p>
+            </div>
+            <img class="polaroid-img" id="photo-img-2" style="display:none;" alt="Memory 3">
+            <label class="upload-overlay-btn" title="Upload actual photo">
+              📷 Upload Photo
+              <input type="file" accept="image/*" class="photo-input" data-index="2" style="display:none;">
+            </label>
+          </div>
+          <div class="polaroid-caption">The sweetest smile in the whole universe 💖</div>
+          <div class="polaroid-date">Month 1 • Pure Happiness</div>
+        </div>
+
+        <!-- Photo 4 -->
+        <div class="polaroid-card" data-index="3">
+          <div class="washi-tape"></div>
+          <div class="polaroid-img-wrapper">
+            <div class="polaroid-fallback-art" id="photo-art-3">
+              <span class="icon">🥂</span>
+              <strong>30 Days & Forever</strong>
+              <p style="font-size:0.75rem; color:var(--text-dim); margin-top:4px;">Here's to a lifetime</p>
+            </div>
+            <img class="polaroid-img" id="photo-img-3" style="display:none;" alt="Memory 4">
+            <label class="upload-overlay-btn" title="Upload actual photo">
+              📷 Upload Photo
+              <input type="file" accept="image/*" class="photo-input" data-index="3" style="display:none;">
+            </label>
+          </div>
+          <div class="polaroid-caption">1 month down, a lifetime to go 🚀</div>
+          <div class="polaroid-date">Month 1 • To Eternity</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       LOVE COUPONS (REDEEMABLE BOOK)
+       ========================================================================== */ -->
+  <section id="coupons-sec" class="coupons-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Valid Anytime • No Expiration</span>
+        <h2 class="section-title">Our Love <span class="gradient-text-alt">Coupon Book</span></h2>
+        <p class="section-desc">Click "Redeem" to claim any coupon with me! Screenshot and send it to me anytime 😉</p>
+      </div>
+
+      <div class="coupons-grid">
+        <!-- Coupon 1 -->
+        <div class="coupon-ticket" id="coupon-1">
+          <div class="stamp-badge">REDEEMED ❤️</div>
+          <div class="coupon-top">
+            <span class="coupon-code">TICKET #001</span>
+            <span class="coupon-validity">FOREVER VALID</span>
+          </div>
+          <div class="coupon-title-box">
+            <span class="coupon-emoji">🫂</span>
+            <h3 class="coupon-name">Unlimited Warm Cuddle Session</h3>
+          </div>
+          <p class="coupon-desc">Entitles holder to one continuous, no-interruption warm embrace and forehead kisses until you feel 100% recharged.</p>
+          <div class="coupon-action-row">
+            <span style="font-size: 0.8rem; color: var(--pink-light);">Cost: 1 Sweet Smile</span>
+            <button class="btn-redeem" onclick="redeemCoupon('coupon-1', 'Unlimited Warm Cuddle Session')">Redeem Ticket 🎟️</button>
+          </div>
+        </div>
+
+        <!-- Coupon 2 -->
+        <div class="coupon-ticket" id="coupon-2">
+          <div class="stamp-badge">REDEEMED ❤️</div>
+          <div class="coupon-top">
+            <span class="coupon-code">TICKET #002</span>
+            <span class="coupon-validity">ANYTIME</span>
+          </div>
+          <div class="coupon-title-box">
+            <span class="coupon-emoji">🍦</span>
+            <h3 class="coupon-name">Late Night Sweet Treat Run</h3>
+          </div>
+          <p class="coupon-desc">Your favorite ice cream, boba, bakery treat or dessert delivered or picked up together, zero questions asked.</p>
+          <div class="coupon-action-row">
+            <span style="font-size: 0.8rem; color: var(--blue-light);">Cost: On My Tab</span>
+            <button class="btn-redeem" onclick="redeemCoupon('coupon-2', 'Late Night Sweet Treat Run')">Redeem Ticket 🎟️</button>
+          </div>
+        </div>
+
+        <!-- Coupon 3 -->
+        <div class="coupon-ticket" id="coupon-3">
+          <div class="stamp-badge">REDEEMED ❤️</div>
+          <div class="coupon-top">
+            <span class="coupon-code">TICKET #003</span>
+            <span class="coupon-validity">MOVIE PASS</span>
+          </div>
+          <div class="coupon-title-box">
+            <span class="coupon-emoji">🎬</span>
+            <h3 class="coupon-name">Movie Night Executive</h3>
+          </div>
+          <p class="coupon-desc">You pick whatever movie or TV show we watch, plus you get full control of the snack arrangement. No vetos allowed!</p>
+          <div class="coupon-action-row">
+            <span style="font-size: 0.8rem; color: var(--purple-light);">Cost: Blanket Sharing</span>
+            <button class="btn-redeem" onclick="redeemCoupon('coupon-3', 'Movie Night Executive')">Redeem Ticket 🎟️</button>
+          </div>
+        </div>
+
+        <!-- Coupon 4 -->
+        <div class="coupon-ticket" id="coupon-4">
+          <div class="stamp-badge">REDEEMED ❤️</div>
+          <div class="coupon-top">
+            <span class="coupon-code">TICKET #004</span>
+            <span class="coupon-validity">SPA MODE</span>
+          </div>
+          <div class="coupon-title-box">
+            <span class="coupon-emoji">💆</span>
+            <h3 class="coupon-name">20-Min Tension Relief Massage</h3>
+          </div>
+          <p class="coupon-desc">Back, neck, shoulders or feet — 20 minutes of gentle relaxation with your favorite music and soothing vibes.</p>
+          <div class="coupon-action-row">
+            <span style="font-size: 0.8rem; color: var(--pink-light);">Cost: Complete Relaxation</span>
+            <button class="btn-redeem" onclick="redeemCoupon('coupon-4', '20-Min Tension Relief Massage')">Redeem Ticket 🎟️</button>
+          </div>
+        </div>
+
+        <!-- Coupon 5 -->
+        <div class="coupon-ticket" id="coupon-5">
+          <div class="stamp-badge">REDEEMED ❤️</div>
+          <div class="coupon-top">
+            <span class="coupon-code">TICKET #005</span>
+            <span class="coupon-validity">CHEF SERVICE</span>
+          </div>
+          <div class="coupon-title-box">
+            <span class="coupon-emoji">🍳</span>
+            <h3 class="coupon-name">Chef Boyfriend Feast</h3>
+          </div>
+          <p class="coupon-desc">I cook your favorite comfort meal or prepare breakfast in bed with your choice of warm beverage.</p>
+          <div class="coupon-action-row">
+            <span style="font-size: 0.8rem; color: var(--blue-light);">Cost: Your Review</span>
+            <button class="btn-redeem" onclick="redeemCoupon('coupon-5', 'Chef Boyfriend Feast')">Redeem Ticket 🎟️</button>
+          </div>
+        </div>
+
+        <!-- Coupon 6 -->
+        <div class="coupon-ticket" id="coupon-6">
+          <div class="stamp-badge">REDEEMED ❤️</div>
+          <div class="coupon-top">
+            <span class="coupon-code">TICKET #006</span>
+            <span class="coupon-validity">ULTIMATE PASS</span>
+          </div>
+          <div class="coupon-title-box">
+            <span class="coupon-emoji">🤫</span>
+            <h3 class="coupon-name">"You Win This Argument" Card</h3>
+          </div>
+          <p class="coupon-desc">Instantly ends any playful argument. I admit you are completely right, apologize unconditionally, and kiss you.</p>
+          <div class="coupon-action-row">
+            <span style="font-size: 0.8rem; color: var(--purple-light);">Cost: Use Wisely!</span>
+            <button class="btn-redeem" onclick="redeemCoupon('coupon-6', 'You Win This Argument Card')">Redeem Ticket 🎟️</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       MINI GAME: CATCH THE FALLING HEARTS
+       ========================================================================== -->
+  <section id="game-sec" class="game-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Girlfriend Arcade</span>
+        <h2 class="section-title">Catch The <span class="gradient-text">Love Sparks</span></h2>
+        <p class="section-desc">Move your basket with your mouse, finger, or arrow keys. Reach 100 Love Points to win your 1-Month Trophy! 🏆</p>
+      </div>
+
+      <div class="game-console">
+        <div class="game-top-bar">
+          <div class="game-stat-box pink">
+            <span>💖 Score:</span>
+            <span id="gameScore">0</span>
+          </div>
+          <div class="game-stat-box blue">
+            <span>⏳ Time:</span>
+            <span id="gameTimer">30s</span>
+          </div>
+          <button class="btn-pill-sm" id="gameSoundBtn">🔊 Sound: ON</button>
+        </div>
+
+        <div class="game-canvas-wrapper">
+          <canvas id="gameCanvas" width="670" height="380"></canvas>
+
+          <!-- Start Screen Overlay -->
+          <div class="game-overlay-screen" id="gameStartScreen">
+            <h3 class="game-overlay-title gradient-text">Catch The Love! 💖</h3>
+            <p style="color: var(--text-muted); max-width: 380px; margin-bottom: 20px;">
+              Catch floating hearts (💖 +10), stars (⭐ +20), and love letters (💌 +30). Avoid rain clouds (🌧️ -10)!
+            </p>
+            <button class="btn-primary" id="startGameBtn">▶ Start Playing</button>
+            <div class="game-controls-hint">
+              <span>🖱️ Drag mouse / touch or use ⬅️ ➡️ arrow keys</span>
+            </div>
+          </div>
+
+          <!-- Win / End Screen Overlay -->
+          <div class="game-overlay-screen hidden" id="gameEndScreen">
+            <h3 class="game-overlay-title" id="gameOverTitle">🏆 Trophy Unlocked!</h3>
+            <p style="color: var(--pink-light); font-size: 1.25rem; font-family: var(--font-cute); margin-bottom: 12px;" id="gameOverMessage">
+              You scored 120 points!
+            </p>
+            <div class="glass-panel" style="padding: 16px 24px; margin-bottom: 20px; border-color: var(--pink-primary);">
+              <span style="font-size: 0.85rem; color: var(--blue-light); text-transform: uppercase; letter-spacing: 0.1em; display:block; margin-bottom:6px;">Official 1-Month Award:</span>
+              <strong style="color: #fff; font-size: 1.15rem;" id="trophyRecipientName">Best & Cutest Girlfriend In The Known Galaxy 🌌</strong>
+            </div>
+            <button class="btn-primary" id="playAgainBtn">🔄 Play Again</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       ROMANTIC MUSIC & AMBIENT LOUNGE
+       ========================================================================== -->
+  <section id="audio-sec" class="audio-section">
+    <div class="container">
+      <div class="audio-card">
+        <div class="vinyl-disc" id="vinylDisc">
+          <div class="vinyl-center">💖</div>
+        </div>
+        <div class="audio-info">
+          <div class="audio-track-title" id="currentTrackTitle">Sweet Lo-fi Chords for Us</div>
+          <div class="audio-track-artist">Live synthesized harmonic dreamscape</div>
+          
+          <div class="audio-controls-row">
+            <button class="btn-primary" id="audioPlayBtn" style="padding: 10px 22px; font-size: 0.9rem;">
+              ▶ Play Music
+            </button>
+            <span style="font-size: 0.85rem; color: var(--text-dim);" id="audioStatusText">Soft & dreamy chords</span>
+          </div>
+
+          <div class="sound-mode-chips">
+            <span class="chip-sound active" data-ambient="lofi">🎹 Dreamy Chords</span>
+            <span class="chip-sound" data-ambient="rain">🌧️ Soft Rain</span>
+            <span class="chip-sound" data-ambient="chimes">🎐 Night Chimes</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-heart">💖</div>
+      <p class="footer-quote" id="footerQuote">
+        "Every love story is beautiful, but ours is my absolute favorite."
+      </p>
+      <div class="footer-credits">
+        Made with infinite love by <strong id="footer-his-name" style="color: var(--pink-light);">Your Boyfriend</strong> for <strong id="footer-her-name" style="color: var(--blue-light);">His Favorite Girl</strong> • Happy 1 Month Anniversary 🌸
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       MODALS
+       ========================================================================== -->
+
+  <!-- Open When Modal -->
+  <div class="modal-backdrop" id="openWhenModal">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="closeOpenWhenBtn">&times;</button>
+      <div class="modal-header">
+        <span class="section-badge" id="modalBadge">Pocket Hug</span>
+        <h3 class="modal-title gradient-text" id="modalTitle">When you miss me</h3>
+      </div>
+      <div style="font-family: var(--font-cute); font-size: 1.25rem; line-height: 1.7; color: #fff; margin-bottom: 24px; white-space: pre-line;" id="modalBody">
+        Letter content here...
+      </div>
+      <div style="text-align: right;">
+        <button class="btn-primary" id="modalOkBtn" style="padding: 10px 22px;">Close with Hug 🫂</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- All 30 Reasons Modal -->
+  <div class="modal-backdrop" id="allReasonsModal">
+    <div class="modal-box" style="max-width: 650px; max-height: 80vh; overflow-y: auto;">
+      <button class="modal-close-btn" id="closeAllReasonsBtn">&times;</button>
+      <div class="modal-header">
+        <span class="section-badge">The Complete List</span>
+        <h3 class="modal-title gradient-text">30 Things I Love About You</h3>
+      </div>
+      <div id="allReasonsList" style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+        <!-- Populated dynamically via JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Personalize & Settings Modal -->
+  <div class="modal-backdrop" id="customizeModal">
+    <div class="modal-box">
+      <button class="modal-close-btn" id="closeCustomizeBtn">&times;</button>
+      <div class="modal-header">
+        <span class="section-badge">Personalize Your Website</span>
+        <h3 class="modal-title gradient-text">Couple Details</h3>
+      </div>
+
+      <form id="customizeForm">
+        <div class="form-group">
+          <label for="inputHerName">Girlfriend's Name / Nickname:</label>
+          <input type="text" id="inputHerName" class="form-control" placeholder="e.g. Maya / Beautiful / Babe" required>
+        </div>
+
+        <div class="form-group">
+          <label for="inputHisName">Boyfriend's Name:</label>
+          <input type="text" id="inputHisName" class="form-control" placeholder="e.g. Alex" required>
+        </div>
+
+        <div class="form-group">
+          <label for="inputStartDate">Official Anniversary Date:</label>
+          <input type="date" id="inputStartDate" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="inputLetterBody">Your Love Letter (Optional custom text):</label>
+          <textarea id="inputLetterBody" class="form-control" rows="4"></textarea>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 12px; margin-top: 24px;">
+          <button type="button" class="btn-pill-sm" id="resetDefaultsBtn">Reset Defaults</button>
+          <button type="submit" class="btn-primary">Save & Celebrate 💖</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Virtual Hug Overlay Pop -->
+  <div class="hug-overlay" id="hugOverlay">
+    <div class="hug-content">
+      <div style="font-size: 4.5rem; margin-bottom: 12px;">🫂💖🌸</div>
+      <h2 class="gradient-text" style="font-size: 2.2rem; font-weight: 800; margin-bottom: 8px;">Incoming Mega Hug!</h2>
+      <p style="font-family: var(--font-cute); font-size: 1.25rem; color: #fff;" id="hugRecipientPhrase">
+        Wrapping you in the warmest, tightest, sweetest embrace possible!
+      </p>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>
+
